@@ -13,7 +13,7 @@ import Input from "../../components/input";
 import CButton from "../../components/button";
 import BottomLink from "../../components/bottom-link";
 
-const LoginScreen = () => {
+const SignupScreen = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
       <View
@@ -36,13 +36,13 @@ const LoginScreen = () => {
                 objectFit: "contain",
                 position: "absolute",
               }}
-              source={require("../../assets/welcome.png")}
+              source={require("../../assets/relaxation.png")}
             />
           </View>
-          <Text style={styles.title}>Welcome Back</Text>
-          <Text style={styles.subtitle}>Login to your account</Text>
+          <Text style={styles.title}>Register</Text>
+          <Text style={styles.subtitle}>Create your account</Text>
           <View style={{ rowGap: 32 }}>
-            <Input icon="mail" placeholder="Email ID" />
+            <Input placeholder="Email ID" />
             <Input icon="lock" placeholder="Password" secureTextEntry={true} />
           </View>
           <Text
@@ -55,11 +55,11 @@ const LoginScreen = () => {
             Forgot Password?
           </Text>
         </View>
-        <CButton label="Login" />
+        <CButton label="Register" />
         <BottomLink
-          preText="Don't have an account?"
-          postText="Sign up"
-          route="signup"
+          preText="Already have an account?"
+          postText="Login"
+          route="login"
         />
       </View>
     </SafeAreaView>
@@ -71,14 +71,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 32,
     color: COLORS.primary,
-    textAlign: "center",
+    textAlign:"center",
   },
-  subtitle: { 
+  subtitle: {
     color: COLORS.primary,
-    textAlign: "center",
+    textAlign:"center",
     paddingBottom: 10,
   },
-  
 });
 
-export default LoginScreen;
+export default SignupScreen;

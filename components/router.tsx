@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import SingupScreen from "../screens/auth/singup";
+import SignupScreen from "../screens/auth/signup";
 import LoginScreen from "../screens/auth/login";
 import HomeScreen from "../screens/home";
 
@@ -13,7 +13,7 @@ export const Router = () => {
         initialRouteName="login"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="singup" component={SingupScreen} />
+        <Stack.Screen name="signup" component={SignupScreen} />
         <Stack.Screen name="login" component={LoginScreen} />
         <Stack.Screen name="home" component={HomeScreen} />
       </Stack.Navigator>
