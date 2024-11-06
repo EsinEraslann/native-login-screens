@@ -7,13 +7,13 @@ const Input = (props: TextInput["props"] & { icon?: string }) => {
   const [isSecure, setIsSecure] = useState(props.secureTextEntry);
   return (
     <View style={styles.input_wrapper}>
-      <View style={styles.input_icon}>
-        <Entypo
-          name={(props.icon ?? "email") as any}
-          size={24}
-          color={COLORS.border}
-        />
-      </View>
+      <Entypo
+        name={(props.icon ?? "email") as any}
+        size={24}
+        color={COLORS.border}
+        style={styles.input_icon}
+      />
+
       <TextInput
         placeholderTextColor={COLORS.border}
         style={styles.input}
@@ -35,21 +35,23 @@ const Input = (props: TextInput["props"] & { icon?: string }) => {
 };
 
 const styles = StyleSheet.create({
-  input: {
-    backgroundColor: "transparent",
-    borderColor: COLORS.border,
-    borderWidth: 0.4,
-    paddingVertical: 12,
-    paddingHorizontal: 12,
-    flex: 1,
-  },
-  input_icon: {
-    padding: 10,
-  },
   input_wrapper: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 24,
+    borderColor: COLORS.border,
+    borderRadius:10,
+    borderWidth: 0.8,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+    backgroundColor: "white",
+  },
+  input: {
+    flex: 1,
+    paddingVertical: 0,
+    paddingHorizontal: 10,
+  },
+  input_icon: {
+    marginRight: 10,
   },
   input_eye: {
     position: "absolute",
@@ -58,4 +60,3 @@ const styles = StyleSheet.create({
 });
 
 export default Input;
- 

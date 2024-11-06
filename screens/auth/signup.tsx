@@ -12,17 +12,29 @@ import { COLORS } from "../../constants";
 import Input from "../../components/input";
 import CButton from "../../components/button";
 import BottomLink from "../../components/bottom-link";
+import { useNavigation } from "@react-navigation/native";
+import Entypo from "@expo/vector-icons/Entypo";
 
 const SignupScreen = () => {
+  
+  const navigation = useNavigation();
+
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#d1ceec" }}>
       <View
         style={{
           paddingHorizontal: 32,
-          backgroundColor: "white",
+          backgroundColor: "#d1ceec",
           flex: 1,
         }}
       >
+        <TouchableOpacity
+          onPress={() => {
+            navigation.canGoBack() && navigation.goBack();
+          }}
+        >
+          <Entypo name="chevron-left" size={20} color={COLORS.primary} />
+        </TouchableOpacity>
         <View style={{ flex: 1 }}>
           <View
             style={{
@@ -41,19 +53,12 @@ const SignupScreen = () => {
           </View>
           <Text style={styles.title}>Register</Text>
           <Text style={styles.subtitle}>Create your account</Text>
-          <View style={{ rowGap: 32 }}>
-            <Input placeholder="Email ID" />
+          <View style={{ rowGap: 32, marginBottom:12 }}>
+            <Input icon="user" placeholder="Username" />
+            <Input icon="mail" placeholder="Email address" />
             <Input icon="lock" placeholder="Password" secureTextEntry={true} />
           </View>
-          <Text
-            style={{
-              color: COLORS.secondary,
-              textAlign: "right",
-              marginVertical: 12,
-            }}
-          >
-            Forgot Password?
-          </Text>
+          <Text style={styles.subtitle}>By registering you are agreeing to our Terms of use and Privacy Policy.</Text>
         </View>
         <CButton label="Register" />
         <BottomLink

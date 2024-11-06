@@ -15,11 +15,11 @@ import BottomLink from "../../components/bottom-link";
 
 const LoginScreen = () => {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#d1ceec" }}>
       <View
         style={{
           paddingHorizontal: 32,
-          backgroundColor: "white",
+          backgroundColor: "#d1ceec",
           flex: 1,
         }}
       >
